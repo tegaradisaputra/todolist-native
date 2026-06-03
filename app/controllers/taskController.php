@@ -7,10 +7,12 @@ $action = $_GET['action'] ?? '';
 
 switch($action){
     case 'add':
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($title)){
+        if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             $title = trim($_POST['title']);
 
-            addTask($pdo, $title);
+            if (!empty($title)){
+                addTask($pdo, $title);
+            }
         }
 
         header('Location: index.php');
@@ -26,7 +28,7 @@ switch($action){
         exit;
 
     case 'delete':
-        $id == (int)($_GET['id'] ?? '');
+        $id = (int)($_GET['id'] ?? '');
         if ($id > 0){
             deleteTask($pdo, $id);
         }
