@@ -8,7 +8,7 @@ function getAllTasks(PDO $pdo){
 }
 
 function addTask(PDO $pdo, string $title){
-    $stmt = $pdo->prepare('INSERT INTO tasks (title, status) values (:title, :0)');
+    $stmt = $pdo->prepare('INSERT INTO tasks (title, status) values (:title, 0)');
 
     // bind param
     $stmt->bindParam(':title', $title, PDO::PARAM_STR);

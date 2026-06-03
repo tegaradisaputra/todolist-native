@@ -1,0 +1,16 @@
+{
+    "name": "straa/todolist-native",
+    "description": "native project",
+    "autoload": {
+        "psr-4": {
+            "Straa\\TodolistNative\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tegaradisaputra",
+            "email": "tegar5a3s7@gmail.com"
+        }
+    ],
+    "require": {}
+}
